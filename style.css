@@ -8,16 +8,33 @@
 
 body {
     background: linear-gradient(315deg, rgb(2,0,36) 0%, rgb(50,75,80) 40%, rgb(0,212,255) 100%);
+    min-height: 100vh;
 }
 
 header {
-    height: 50px;
     background: rgb(2,0,27);
 }
 
 .container {
     width: 1300px;
     margin: 0 auto;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+label {
+    color: cornsilk;
+}
+
+label,
+select,
+input {
+    margin: 0 10px;
 }
 
 .records-wrapper {
@@ -29,7 +46,7 @@ header {
 }
 
 .record {
-    display: flex;
+    display: none;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
@@ -40,6 +57,10 @@ header {
     text-align: center;
     border-radius: 8px;
     width: 25%;
+}
+
+.record.active {
+    display: flex;
 }
 
 img {
