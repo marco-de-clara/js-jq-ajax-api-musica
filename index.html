@@ -14,13 +14,12 @@
                 <form>
                     <label for="genre">Choose a genre:</label>
                     <select name="genre" id="genre">
-                      <option value="pop">Pop</option>
-                      <option value="rock">Rock</option>
-                      <option value="metal">Metal</option>
-                      <option value="jazz">Jazz</option>
-                      <option value="all">All</option>
+                        <option value="all">All</option>
+                        <option value="pop">Pop</option>
+                        <option value="rock">Rock</option>
+                        <option value="metal">Metal</option>
+                        <option value="jazz">Jazz</option>
                     </select>
-                    <input type="button" value="Submit">
                   </form>
             </div>
         </header>
@@ -29,11 +28,11 @@
 
         <script id="record-card" type="text/x-handlebars-template">
             <div class="record active">
-                <img src="{{poster}}" alt="">
-                <h2 class="title">{{title}}</h2>
-                <div class="author">{{author}}</div>
-                <div class="genre">{{genre}}</div>
-                <div class="year">{{year}}</div>
+                <img src="{{record_poster}}" alt="">
+                <h2 class="title">{{record_title}}</h2>
+                <div class="author">{{record_author}}</div>
+                <div class="genre">{{record_genre}}</div>
+                <div class="year">{{record_year}}</div>
             </div>
         </script>
         <script src="main.js" charset="utf-8"></script>

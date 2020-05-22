@@ -5,14 +5,30 @@ $(document).ready( function() {
         'method' : "GET",
         'success' : function(data) {
             // get records from api
-            var record = data.response;
+            var records = data.response;
             // get html from record card template
             var template_record_html = $('#record-card').html();
             // ready the function
             var template_function = Handlebars.compile(template_record_html);
-            for(var i = 0; i < record.length; i++) {
+            for(var i = 0; i < records.length; i++) {
+                // select a specific record
+                var record = records[i];
+                // get info from api
+                var poster = record.poster;
+                var title = record.title;
+                var author = record.author;
+                var genre = record.genre;
+                var year = record.year;
+                // store info in an object
+                var context = {
+                    'record_poster' : poster,
+                    'record_title' : title,
+                    'record_author' : author,
+                    'record_genre' : genre,
+                    'record_year' : year
+                }
                 // set the object inside the template
-                var template_final = template_function(record[i]);
+                var template_final = template_function(context);
                 // append card to container
                 $('.records-wrapper').append(template_final);
             };
@@ -22,8 +38,7 @@ $(document).ready( function() {
         }
     });
 
-    // catch click on input to choose a music genre
-    $('input').click(function(event) {
+    $('#genre').change(function() {
         // get chosen genre
         var chosen_genre = $('#genre :selected').val();
         // loop for the number of records to show a specific genre
