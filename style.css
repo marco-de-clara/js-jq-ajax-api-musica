@@ -13,6 +13,8 @@ body {
 
 header {
     background: rgb(2,0,27);
+    position: fixed;
+    width: 100%;
 }
 
 .container {
@@ -32,8 +34,7 @@ label {
 }
 
 label,
-select,
-input {
+select {
     margin: 0 10px;
 }
 
